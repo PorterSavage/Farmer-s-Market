@@ -270,4 +270,16 @@ const seasonalProduceList = [
   }
 ];
 
+function ProduceSchedule(){
+  return (
+    <div>
+      <hr/>
+      {seasonalProduceList.map((produceSchedule, index) =>
+        <Schedule 
+        month={produceSchedule.month}
+        selection={produceSchedule.map(selection)})}
+    </div>
+  )
+}
+
 export default seasonalProduceList;
