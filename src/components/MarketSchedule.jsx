@@ -1,5 +1,5 @@
 import React from "react";
-import Schedule from "./Schedule";
+import LocationSchedule from "./LocationSchedule";
 
 const marketSchedule = [
   {  
@@ -43,9 +43,10 @@ const marketSchedule = [
 function MarketSchedule(){
   return(
     <div>
+      <h2>Location Schedule:</h2>
       <hr/>
       {marketSchedule.map((schedule, index) =>
-        <Schedule day={schedule.day}
+        <LocationSchedule day={schedule.day}
         location={schedule.location}
         hours={schedule.hours}
         booth={schedule.booth}

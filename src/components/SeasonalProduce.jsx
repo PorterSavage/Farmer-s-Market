@@ -1,5 +1,5 @@
 import React from "react";
-import Schedule from "./Schedule";
+import SeasonalProduceSchedule from "./SeasonalProduceSchedule";
 
 const seasonalProduceList = [
   {
@@ -270,16 +270,20 @@ const seasonalProduceList = [
   }
 ];
 
-function ProduceSchedule(){
+function SeasonalProduce(){
   return (
     <div>
+      <h2>Produce Schedule:</h2>
       <hr/>
       {seasonalProduceList.map((produceSchedule, index) =>
-        <Schedule 
+        <SeasonalProduceSchedule
         month={produceSchedule.month}
-        selection={produceSchedule.map(selection)})}
+        selection={produceSchedule.selection.map((i) =>
+          <li>{i}</li>
+        )}key={index}/>
+      )}
     </div>
   )
 }
 
-export default seasonalProduceList;
+export default SeasonalProduce;
